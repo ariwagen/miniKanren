@@ -1,6 +1,5 @@
 #lang racket
 
-
 ;; Our variables are Racket's numbers
 (define (var n) n)
 (define (var? n) (number? n))
@@ -159,12 +158,7 @@ Note for me: A substitution is a series of key / value pairs, akin to a perl has
 (define (run n g)
   (take n (fake-run g)))
 
-;; my own TESTing ?? i'm not the best at this ... yet
-;; this is basically just what we did in class :( i'm not sure how i would improve on it
-
-;; this is my formula to solve the quadratic formula ... it's messy right now
-;; but this is the sort of code i feel comfortable writing in racket
-
+;; this is me getting comfortable with some racket syntax ... never written anything like it before cs 5963
 ;; !!! QUADRATIC FORMULA !!!
 ;; takes a b c from ax^2 + bx + c = 0
 ;; returns a pair of solutions
@@ -176,6 +170,7 @@ Note for me: A substitution is a series of key / value pairs, akin to a perl has
   (let ((discriminant (- (* b b) (* 4 (* a c)))))
   (cons (/ (+ (- b) (sqrt discriminant)) (* 2 a)) (/ (- (- b) (sqrt discriminant)) (* 2 a)))))))
 
+;; below is from minikanren.org
 
 (define a-and-b
   (conj 
@@ -185,7 +180,3 @@ Note for me: A substitution is a series of key / value pairs, akin to a perl has
       (disj
        (== b 5)
        (== b 6))))))
-
-;; I'm trying to run this and it's giving me errors :
-
-;; (run 1 (a-and-b empty-state))
